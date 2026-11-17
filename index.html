@@ -7,10 +7,10 @@
 <meta name="description" content="Kyrellos &amp; Meryam's engagement · Wednesday 25 November 2026 · Celini, Helnan Palace, Alexandria">
 <!-- Link preview when shared on WhatsApp / Instagram (image needs the full address) -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://kyrellos-meryam.km2026.workers.dev/">
+<meta property="og:url" content="https://kyrellosandmeryam.github.io/km2026/">
 <meta property="og:title" content="Kyrellos &amp; Meryam · You're invited">
 <meta property="og:description" content="Our engagement · Wednesday 25 November 2026 · Celini, Helnan Palace, Alexandria. Tap to open your invitation.">
-<meta property="og:image" content="https://kyrellos-meryam.km2026.workers.dev/photos/share.jpg">
+<meta property="og:image" content="https://kyrellosandmeryam.github.io/km2026/share.jpg">
 <meta property="og:image:width" content="800">
 <meta property="og:image:height" content="800">
 <meta name="twitter:card" content="summary_large_image">
@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="textures/crumpled-red.jpg">
+<link rel="preload" as="image" href="crumpled-red.jpg">
 <style>
 /* =========================================================
    DESIGN SYSTEM
@@ -40,16 +40,16 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer;-we
 [hidden]{display:none !important}
 
 /* ---------- materials ----------
-   textures/parchment-ivory.jpg — "Crumpled beige parchment paper texture", Unsplash (free under the Unsplash License)
-   textures/gold-leaf.jpg       — "Textured gold leaf surface", Unsplash (free under the Unsplash License)
-   textures/crumpled-red.jpg    — provided by the couple */
-.burgundy{position:relative;color:var(--champ);background:#4a0f1a url(textures/crumpled-red.jpg) center/cover}
+   parchment-ivory.jpg — "Crumpled beige parchment paper texture", Unsplash (free under the Unsplash License)
+   gold-leaf.jpg       — "Textured gold leaf surface", Unsplash (free under the Unsplash License)
+   crumpled-red.jpg    — provided by the couple */
+.burgundy{position:relative;color:var(--champ);background:#4a0f1a url(crumpled-red.jpg) center/cover}
 .burgundy::before{content:"";position:absolute;inset:0;background:rgba(30,4,10,.22);pointer-events:none}
-.parchment{position:relative;background:#efe5d2 url(textures/parchment-ivory.jpg) center/cover}
+.parchment{position:relative;background:#efe5d2 url(parchment-ivory.jpg) center/cover}
 .parchment::before{content:"";position:absolute;inset:0;background:rgba(251,247,239,.38);pointer-events:none}
 .burgundy > *,.parchment > *{position:relative}
 /* gold-leaf lettering: the real leaf texture, re-tinted to exactly the same gold as everything else */
-.goldleaf{background-image:linear-gradient(var(--gold),var(--gold)),url(textures/gold-leaf.jpg);background-size:cover;background-position:center;
+.goldleaf{background-image:linear-gradient(var(--gold),var(--gold)),url(gold-leaf.jpg);background-size:cover;background-position:center;
   background-blend-mode:color,normal;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:brightness(1.2)}
 
 .burgundy .title.goldleaf,.burgundy .sig.goldleaf{filter:brightness(1.2) drop-shadow(0 1px 1px rgba(0,0,0,.4))}
@@ -91,8 +91,8 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer;-we
 .stage{position:fixed;inset:0;z-index:10;overflow:hidden;--fh:56vh;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:opacity 1s ease}
 .stage.gone{opacity:0;pointer-events:none}
 .stage::after{content:"";position:absolute;inset:0;z-index:5;pointer-events:none;background:radial-gradient(ellipse at 50% 42%,transparent 55%,rgba(18,2,6,.35) 100%)}
-.paper-red{background:#5e1418 url(textures/crumpled-red.jpg) center/cover}
-.liner{position:absolute;inset:0;background:#2a070d;background-image:linear-gradient(rgba(25,3,8,.6),rgba(25,3,8,.6)),url(textures/crumpled-red.jpg);background-size:cover;background-position:center}
+.paper-red{background:#5e1418 url(crumpled-red.jpg) center/cover}
+.liner{position:absolute;inset:0;background:#2a070d;background-image:linear-gradient(rgba(25,3,8,.6),rgba(25,3,8,.6)),url(crumpled-red.jpg);background-size:cover;background-position:center}
 
 .inner-card{position:absolute;left:8%;right:8%;top:8vh;height:72vh;z-index:2;text-align:center;padding-top:5vh;
   box-shadow:0 10px 30px rgba(0,0,0,.45);transition:transform 1.3s cubic-bezier(.22,.9,.3,1),opacity .9s ease}
@@ -117,7 +117,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer;-we
 .flap .f-out{background-size:180% auto;background-position:35% 15%}
 .flap .f-out::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0,rgba(255,230,220,.1),transparent 65%)}
 .flap .f-out svg{position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:overlay}
-.flap .f-in{transform:rotateX(180deg);background:#2a070d;background-image:linear-gradient(rgba(25,3,8,.5),rgba(25,3,8,.5)),url(textures/crumpled-red.jpg);background-size:cover}
+.flap .f-in{transform:rotateX(180deg);background:#2a070d;background-image:linear-gradient(rgba(25,3,8,.5),rgba(25,3,8,.5)),url(crumpled-red.jpg);background-size:cover}
 
 .env-text{position:absolute;left:0;right:0;top:0;height:var(--fh);z-index:6;pointer-events:none;color:var(--champ);
   display:flex;flex-direction:column;align-items:center;justify-content:center;padding-bottom:calc(var(--fh) * .3);text-align:center;transition:opacity .6s ease}
@@ -360,7 +360,7 @@ body.opened .hero-bg img{transition:transform 16s ease-out;transform:scale(1)}
     </div>
   </section>
 
-  <!-- our song (the record always shows; Play appears once music/song.mp3 exists) -->
+  <!-- our song (the record always shows; Play appears once song.mp3 exists) -->
   <section class="sec song" id="songSec">
     <div class="sec-in rv" id="player">
       <div class="turntable"><div class="vinyl" id="vinyl"><span class="vlabel" data-bind="initialsPlain"></span></div><div class="arm"></div></div>
@@ -488,12 +488,12 @@ const CONFIG = {
   venueAddress: "Helnan Palace Hotel, Montazah, Alexandria",
   mapsLink: "https://maps.app.goo.gl/7pJeU43gsQe5set17",   // Google Maps share link for the venue
 
-  heroPhoto: "photos/hero.jpg",          // full-screen black & white photo
-  stripPhoto: "photos/strip.jpg",        // photo-booth strip
-  photo1: "photos/couple.jpg",           // tall print
-  photo2: "photos/2.jpg",                // wide print
+  heroPhoto: "hero.jpg",          // full-screen black & white photo
+  stripPhoto: "strip.jpg",        // photo-booth strip
+  photo1: "couple.jpg",           // tall print
+  photo2: "2.jpg",                // wide print
 
-  music: "music/song.mp3",               // starts when the seal is tapped
+  music: "song.mp3",               // starts when the seal is tapped
   closing: "We can't wait to celebrate with you",
 
   /* RSVP — replies go to your Google Form, which saves them in a Google Sheet */
