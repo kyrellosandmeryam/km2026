@@ -291,13 +291,20 @@ body.opened .hero-bg img{transition:transform 16s ease-out;transform:scale(1)}
     <circle cx="5" cy="11" r="2.4" fill="currentColor"/><circle cx="30" cy="4" r="2.6" fill="currentColor"/><circle cx="55" cy="11" r="2.4" fill="currentColor"/>
   </symbol>
   <symbol id="flourish" viewBox="0 0 240 40">
-    <g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round">
-      <g id="fl-r"><path d="M128 20 C150 20 160 8 176 10 C190 12 192 26 180 28 C170 30 166 20 174 17"/><path d="M176 10 C196 5 214 15 236 20"/>
-        <path d="M146 19 C149 11 159 10 158 16"/><path d="M196 23 C204 30 216 27 222 22"/></g>
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <g id="fl-r">
+        <!-- one flowing stem from the centre out to a fine tip -->
+        <path stroke-width="1.15" d="M128 20 C142 20 150 23.5 162 23.5 C176 23.5 186 17 200 17 C212 17 222 19.5 233 20"/>
+        <!-- scroll rising from the stem and rolling into a tight curl -->
+        <path stroke-width="1" d="M156 23.2 C152 15 158 9.5 165 10 C171 10.5 173 16.5 169 18.5 C166 20 162.5 17.5 164.5 15"/>
+        <!-- smaller answering scroll beneath, near the tip -->
+        <path stroke-width=".9" d="M196 17.3 C199 24.5 207 27 212 24.5 C216 22.5 214.5 18.5 211 19.6"/>
+      </g>
       <use href="#fl-r" transform="matrix(-1 0 0 1 240 0)"/>
-      <path d="M120 11 L127 20 L120 29 L113 20 Z"/>
+      <path stroke-width="1.1" d="M120 13 L126 20 L120 27 L114 20 Z"/>
     </g>
-    <circle cx="120" cy="20" r="2" fill="currentColor"/>
+    <circle cx="120" cy="20" r="1.7" fill="currentColor"/>
+    <circle cx="234.6" cy="20" r="1.1" fill="currentColor"/><circle cx="5.4" cy="20" r="1.1" fill="currentColor"/>
   </symbol>
   <symbol id="pin" viewBox="0 0 40 52">
     <g fill="none" stroke="currentColor" stroke-width="1.3">
@@ -388,7 +395,7 @@ body.opened .hero-bg img{transition:transform 16s ease-out;transform:scale(1)}
       <p class="cd-done script" id="cdDone" hidden>Today is the day</p>
       <div class="cal">
         <p class="eyebrow">Add to your calendar</p>
-        <div><a class="btn btn-ghost" id="gcal" target="_blank" rel="noopener">Google</a><a class="btn btn-ghost" id="ical" download="kyrellos-meryam-engagement.ics">Apple / Outlook</a></div>
+        <div><a class="btn btn-ghost" id="gcal" target="_blank" rel="noopener">Google</a><a class="btn btn-ghost" id="ical" href="engagement.ics">Apple / Outlook</a></div>
       </div>
     </div>
   </section>
@@ -702,12 +709,8 @@ const CONFIG = {
     const about = `We can't wait to celebrate with you.` + (CONFIG.mapsLink ? `\nMap: ${CONFIG.mapsLink}` : "");
     $("gcal").href = "https://calendar.google.com/calendar/render?action=TEMPLATE" +
       `&text=${encodeURIComponent(title)}&dates=${z(startAbs)}/${z(end)}&details=${encodeURIComponent(about)}&location=${encodeURIComponent(where)}`;
-    const ie = s => s.replace(/\\/g, "\\\\").replace(/([,;])/g, "\\$1").replace(/\n/g, "\\n");
-    const ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Engagement Invitation//EN", "BEGIN:VEVENT",
-      `UID:${z(startAbs)}-engagement@invitation`, `DTSTAMP:${z(new Date())}`, `DTSTART:${z(startAbs)}`, `DTEND:${z(end)}`,
-      `SUMMARY:${ie(title)}`, `LOCATION:${ie(where)}`, `DESCRIPTION:${ie(about)}`,
-      "BEGIN:VALARM", "TRIGGER:-P1D", "ACTION:DISPLAY", `DESCRIPTION:${ie(title)} is tomorrow`, "END:VALARM", "END:VEVENT", "END:VCALENDAR"].join("\r\n");
-    $("ical").href = "data:text/calendar;charset=utf-8," + encodeURIComponent(ics);
+    // Apple / Outlook: a real engagement.ics file next to this page (iPhones ignore data: links,
+    // but open a served .ics straight into "Add to Calendar"). Edit that file if the date or time ever changes.
   })();
 
   /* ---------- music ---------- */
