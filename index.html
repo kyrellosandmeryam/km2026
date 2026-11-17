@@ -170,7 +170,7 @@ body.opened main{opacity:1}
 .hero{--ph:min(128vw,66svh,760px);position:relative;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
   padding:calc(var(--ph) - 26px) 22px 56px;color:#f6efe4;text-align:center;overflow:hidden;background:rgb(55,8,16)}
 .hero-bg{position:absolute;left:0;right:0;top:0;height:var(--ph);overflow:hidden}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 32%;filter:grayscale(1) sepia(.2) contrast(1.05) brightness(.85);transform:translateX(10%) scale(1.32)}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;filter:grayscale(1) sepia(.2) contrast(1.05) brightness(.85);transform:translateX(10%) scale(1.32)}
 /* zoomed a little and nudged right so the two of you sit in the middle of the screen */
 body.opened .hero-bg img{transition:transform 16s ease-out;transform:translateX(9%) scale(1.2)}
 .hero::after{content:"";position:absolute;left:0;right:0;top:0;height:calc(var(--ph) + 1px);pointer-events:none;
@@ -506,8 +506,8 @@ const CONFIG = {
   mapsLink: "https://maps.app.goo.gl/7pJeU43gsQe5set17",   // Google Maps share link for the venue
   minCharge: "600 EGP per person",            // venue minimum charge
 
-  heroPhoto: "mirror.jpg",        // full-screen photo (shown in black & white)
-  photo1: "couple.jpg",           // tall print
+  heroPhoto: "couple.jpg",        // full-screen photo (shown in black & white)
+  photo1: "mirror.jpg",           // tall print
   photo2: "2.jpg",                // wide print
 
   music: "song.mp3",               // starts when the seal is tapped
@@ -609,7 +609,7 @@ const CONFIG = {
     return `<svg viewBox="0 0 160 200" aria-hidden="true"><defs>${goldFilter("frameF" + uid, 160, 200)}` +
       `<clipPath id="frameWin${uid}"><ellipse cx="80" cy="100" rx="58" ry="78"/></clipPath></defs>` +
       // the photo, black & white, faces centred in the oval
-      `<image href="${esc(CONFIG.heroPhoto)}" x="-20" y="-76" width="260" height="347" preserveAspectRatio="xMidYMid slice" clip-path="url(#frameWin${uid})" style="filter:grayscale(1) contrast(1.06) brightness(1.05)"/>` +
+      `<image href="${esc(CONFIG.heroPhoto)}" x="-6" y="-66" width="200" height="356" preserveAspectRatio="xMidYMid slice" clip-path="url(#frameWin${uid})" style="filter:grayscale(1) contrast(1.06) brightness(1.05)"/>` +
       `<ellipse cx="80" cy="100" rx="58" ry="78" fill="none" stroke="rgba(0,0,0,.35)" stroke-width="3"/>` +
       // gold frame: outer body, beaded ring, raised rim and inner bevel (a ring, so the photo shows through)
       `<g filter="url(#frameF${uid})">` +
