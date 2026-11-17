@@ -126,6 +126,8 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer;-we
 .env-text .script{font-size:clamp(24px,7.4vw,32px)}
 .env-text .orn{width:min(44%,170px);margin:4px auto 10px}
 .env-names{font-weight:300;font-size:clamp(26px,8.1vw,40px);letter-spacing:.14em;padding-left:.14em;line-height:1.08;text-transform:uppercase;color:#f3e7d3;text-shadow:0 1px 0 rgba(0,0,0,.35)}
+/* inside gold-leaf text the parent's clipped fill doesn't reach a tilted &, so paint it solid gold */
+.goldleaf .amp-i{-webkit-text-fill-color:var(--gold);color:var(--gold)}
 .eyebrow .amp-i{font-size:1.25em;letter-spacing:0;padding:0 .05em}
 .env-names .amp-i{display:block;font-size:.9em;line-height:1.05;color:var(--gold);letter-spacing:0;padding:0}
 .frame{position:absolute;inset:14px;z-index:6;pointer-events:none;border:1px solid rgba(201,160,90,.6);transition:opacity .6s ease}
