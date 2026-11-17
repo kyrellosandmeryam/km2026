@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Kyrellos and Meryam//Engagement//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:20261125T180000Z-kyrellos-meryam-engagement@github.io
+DTSTAMP:20261117T063852Z
+DTSTART:20261125T180000Z
+DTEND:20261125T220000Z
+SUMMARY:Kyrellos & Meryam - Engagement
+LOCATION:Celini\, Helnan Palace Hotel\, Montazah\, Alexandria
+DESCRIPTION:We can't wait to celebrate with you.\nMap: https://maps.app.goo.gl/7pJeU43gsQe5set17
+URL:https://kyrellosandmeryam.github.io/km2026/
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Kyrellos & Meryam's engagement is tomorrow
+END:VALARM
+END:VEVENT
+END:VCALENDAR
