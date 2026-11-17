@@ -59,7 +59,8 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer;-we
 .eyebrow{font-size:12px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;padding-left:.32em;line-height:1.8}
 .title{font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(40px,11.5vw,50px);line-height:1.2;padding:0 .12em}
 /* one clear "&" everywhere: the traditional upright Garamond & in gold (the script font's & reads like a letter) */
-.amp-i{font-family:'Cormorant Garamond',Georgia,serif;font-style:normal;font-weight:500;font-size:.8em;padding:0 .12em;color:var(--gold);text-transform:none}
+/* slanted to sit with the script, but keeping the traditional & shape (a true italic & turns into a loop) */
+.amp-i{display:inline-block;transform:skewX(-14deg);font-family:'Cormorant Garamond',Georgia,serif;font-style:normal;font-weight:500;font-size:.8em;padding:0 .12em;color:var(--gold);text-transform:none}
 
 /* ---------- section template ---------- */
 .sec{padding:var(--pad) 24px;text-align:center}
@@ -177,9 +178,10 @@ body.opened .hero-bg img{transition:transform 16s ease-out;transform:scale(1)}
   filter:drop-shadow(0 2px 8px rgba(0,0,0,.6))}
 .hero-names .amp-i{display:block;width:max-content;margin:0 auto;color:var(--gold);font-size:.62em;line-height:1.1;letter-spacing:0;padding:0}
 .hero-names .ch,.hero-names .amp-i{display:inline-block;opacity:0;transform:translateY(14px)}
-.hero-names .amp-i{display:block}
+.hero-names .amp-i{display:block;transform:translateY(14px) skewX(-14deg)}
 .hero-names .ch{padding:.06em .22em .14em}
 .hero-names.in .ch,.hero-names.in .amp-i{transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--d) * 55ms + .3s);opacity:1;transform:none}
+.hero-names.in .amp-i{transform:skewX(-14deg)}
 .hero-date{font-size:17px;letter-spacing:.4em;padding-left:.4em;color:var(--champ)}
 .scroll-cue{margin-top:24px;color:var(--champ);opacity:.75}
 .scroll-cue svg{display:block;margin:0 auto;animation:bob 1.8s ease-in-out infinite}
